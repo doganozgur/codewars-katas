@@ -12,11 +12,9 @@ The input array will always contain only positive numbers, and will never be emp
 */
 
 function squareOrSquareRoot(array) {
-    array.map(number => (
-        // return Math.sqrt(number) % 1 === 0 ? Math.pow(number, number) : Math.sqrt
-        number * 2
+    return array.map(number => (
+        Math.sqrt(number) % 1 !== 0 ? number * number : Math.sqrt(number)
     ))
-
 }
 
 console.log(squareOrSquareRoot([4,3,9,7,2,1]));
