@@ -13,7 +13,8 @@ function isNarcissistic(n) {
     let arrayValue = strNumber.split('');
     let sum = 0;
     arrayValue.map((number) => {
-        sum += parseInt(number)**exponent
+        // sum += parseInt(number)**exponent
+        sum += Math.pow(Number(number), exponent)
     })
     return sum == n ? true : false;
 }
