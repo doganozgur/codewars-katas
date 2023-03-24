@@ -34,7 +34,7 @@ function maskify(cc) {
   return cc
     .split("")
     .map((letter, index, array) => {
-      if (index < array.length - 5) {
+      if (index < array.length - 4) {
         return "#";
       } else {
         return letter;
