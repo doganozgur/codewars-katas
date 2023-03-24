@@ -20,14 +20,27 @@ Examples
 
 // return masked string
 function maskify(cc) {
-  if (cc.length < 4) {
-    return cc;
-  } else {
-    const lastFourCharacters = cc.slice(-4);
-    const encodedCharacters = cc.slice(4).split("").fill("#").join("");
+  // Solution 1
+  // if (cc.length < 4) {
+  //   return cc;
+  // } else {
+  //   const lastFourCharacters = cc.slice(-4);
+  //   const encodedCharacters = cc.slice(4).split("").fill("#").join("");
 
-    return encodedCharacters + lastFourCharacters;
-  }
+  //   return encodedCharacters + lastFourCharacters;
+  // }
+
+  // Solution 2
+  return cc
+    .split("")
+    .map((letter, index, array) => {
+      if (index < array.length - 5) {
+        return "#";
+      } else {
+        return letter;
+      }
+    })
+    .join("");
 }
 
 console.log(maskify("4556364607935616"), "############5616");
